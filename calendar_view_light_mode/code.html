@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4848e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>EaseMyTask - Calendar</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800">
+<div class="p-6 flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">rocket_launch</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">EaseMyTask</h2>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium">Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">check_box</span>
+<span class="font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Team</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover" data-alt="User profile avatar portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1rCu2S7P-X_mxjRYDtipimLKEsOdWOK1nGZZ0q9I5VQvjKabW_EgkwzCfwsrq8MwCYN-abGKMuiHAU2609sIl7pMTV_LwFsrCkdfcFQSoC188C1v7GWjFprjmVDQV-x_NwWS4Or8y7CW9_3JOFeyecq_EfIV02jSvivwPpTieBuuQAD5uYhbD5hP3ywFkVik6OEpRcdTPnOlGVpUCTvyOChz8Ah-V8Zx5cYo_QZPw-o2vQzsM-nP9PiWYsp3_76cnLl7K16YGHyFj')"></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold">Alex Rivers</p>
+<p class="text-xs text-slate-500">Pro Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col overflow-hidden">
+<header class="h-16 flex items-center justify-between px-8 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary text-sm" placeholder="Search tasks, events..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="size-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-slate-600">settings</span>
+</button>
+<button class="ml-2 bg-primary text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-primary/90 transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">add</span>
+                        New Task
+                    </button>
+</div>
+</header>
+<main class="flex-1 flex overflow-hidden">
+<div class="flex-1 flex flex-col p-8 overflow-y-auto">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<h1 class="text-2xl font-bold">October 2023</h1>
+<div class="flex bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-1">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="px-3 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded">Today</button>
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg">Month</button>
+<button class="px-4 py-2 text-sm font-medium text-slate-500">Week</button>
+<button class="px-4 py-2 text-sm font-medium text-slate-500">Day</button>
+</div>
+</div>
+<div class="flex-1 flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="grid grid-cols-7 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Sun</div>
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Mon</div>
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Tue</div>
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Wed</div>
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Thu</div>
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Fri</div>
+<div class="py-3 text-center text-xs font-bold text-slate-500 uppercase">Sat</div>
+</div>
+<div class="grid grid-cols-7 flex-1">
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 text-slate-300">27</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 text-slate-300">28</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 text-slate-300">29</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 text-slate-300">30</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">1</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">2</div>
+<div class="min-h-[120px] p-2 border-b border-slate-200 dark:border-slate-800 font-medium">3</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">4</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium bg-primary/5">
+<span class="size-7 flex items-center justify-center bg-primary text-white rounded-full">5</span>
+<div class="mt-2 space-y-1">
+<div class="px-2 py-0.5 bg-red-100 text-red-600 text-[10px] rounded-lg font-bold border border-red-200">System Audit</div>
+<div class="px-2 py-0.5 bg-blue-100 text-blue-600 text-[10px] rounded-lg font-bold border border-blue-200">Team Sync</div>
+<div class="px-2 py-0.5 bg-green-100 text-green-600 text-[10px] rounded-lg font-bold border border-green-200">Client Call</div>
+</div>
+</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">6</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">7</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">8</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">9</div>
+<div class="min-h-[120px] p-2 border-b border-slate-200 dark:border-slate-800 font-medium">10</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">11</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">
+                                12
+                                <div class="mt-2 space-y-1">
+<div class="px-2 py-0.5 bg-amber-100 text-amber-600 text-[10px] rounded-lg font-bold border border-amber-200">Design Review</div>
+</div>
+</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">13</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">14</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">15</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">16</div>
+<div class="min-h-[120px] p-2 border-b border-slate-200 dark:border-slate-800 font-medium">17</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">18</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">19</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">20</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">21</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">22</div>
+<div class="min-h-[120px] p-2 border-r border-b border-slate-200 dark:border-slate-800 font-medium">23</div>
+<div class="min-h-[120px] p-2 border-b border-slate-200 dark:border-slate-800 font-medium">
+                                24
+                                <div class="mt-2 space-y-1">
+<div class="px-2 py-0.5 bg-red-100 text-red-600 text-[10px] rounded-lg font-bold border border-red-200">Launch Prep</div>
+<div class="px-2 py-0.5 bg-primary/20 text-primary text-[10px] rounded-lg font-bold">2 more...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-80 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">October 5, 2023</h3>
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-sm text-slate-500 font-medium">3 active tasks scheduled</p>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<div class="space-y-4">
+<div class="p-4 rounded-xl border-l-4 border-red-500 bg-red-50/50 dark:bg-red-900/10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold uppercase tracking-wider text-red-600">High Priority</span>
+<span class="text-xs text-slate-400 font-medium">09:00 AM</span>
+</div>
+<h4 class="font-bold text-sm">Quarterly System Audit</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="size-6 rounded-full bg-slate-300" data-alt="Team member profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJzzPXxQcrNAoGIs8DOt22GcKZCUOvZY0P6P7Ql140_7wSyfjl1TqeFtkbu6mj279Jn7Elu_c_RavkUWuNFK0mfPmR2gSBC0PItgfNi8S30cKFKV3iAfllgaMqFULvt93NqX-9E_FJIwPrOwSi3e7OgybBsCgfcucImj5zqSkwbXh2JZcSepD5mopcgCDkyPjXl_9w2Tjk9W2iua3VeR_R2bIHRwKjhhJ2kSKevywPuwVp5fkDg8rLUnsGOwu9y95EThZTdjqnofmt')"></div>
+<span class="text-xs text-slate-500">Assigned to: Tech Team</span>
+</div>
+</div>
+<div class="p-4 rounded-xl border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-900/10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold uppercase tracking-wider text-blue-600">Medium Priority</span>
+<span class="text-xs text-slate-400 font-medium">01:30 PM</span>
+</div>
+<h4 class="font-bold text-sm">Bi-weekly Team Sync</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="size-6 rounded-full bg-slate-300" data-alt="Team member profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1p3WxgJ5g76cbyyyaSKDXEm3NjRhotJkZN3H0WA5N1smwV_PS4Mt1pVljW3EiM4iLr9Gr7Ci0N_Pd1zCwrIPuAd6fEgML3RO_iiE7IJwHTfenumycbK6Ow2bM_ZSastqODLp0baMNjlN2M4_V9dV825sLwZFAYX7cA-VMO7tUA-VLR1CRIvchfhEjFnqi1GDa62JgH4txcCylaUA04B-a2B4UByH8ZMNdbEJ3HkyBSlH_TFgFG1akBIOJ-vNyN4VbYBrhDS_7P1Of')"></div>
+<span class="text-xs text-slate-500">Assigned to: General</span>
+</div>
+</div>
+<div class="p-4 rounded-xl border-l-4 border-green-500 bg-green-50/50 dark:bg-green-900/10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-600">Low Priority</span>
+<span class="text-xs text-slate-400 font-medium">04:00 PM</span>
+</div>
+<h4 class="font-bold text-sm">New Client Discovery Call</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="size-6 rounded-full bg-slate-300" data-alt="Team member profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQLk_4_9AHI1kmYJivU8TV8Y8WLwYwDXcv4LFNcsu5oJo3N_-TJufjNWWrvOEqY_nGfngszJ7FFL4lNyicWSO3956LcUDVyroZ9qNh28qwTdAF7v-4Fi803kMCZA_fRjfdJPxMN9L4qCZdKBzTLGyfxI3m_wm0B4kq5tU2KR7SlY_-lktJchBtyBC3kleiHa9xCYN4ZCLjS0NuOwXwiFcYJslLeY530T-QsZ-AWqM1PsiZIZbhyFe2Nl7YiaPnjdytygamhzuYIxfA')"></div>
+<span class="text-xs text-slate-500">Assigned to: Sales</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+<h4 class="text-sm font-bold mb-3">Quick Actions</h4>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 text-xs font-semibold bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 transition-colors flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                    Reschedule
+                                </button>
+<button class="p-3 text-xs font-semibold bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 transition-colors flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-sm">share</span>
+                                    Export Day
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
