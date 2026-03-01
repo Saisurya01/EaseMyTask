@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4848e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col h-full">
+<div class="p-6 flex flex-col gap-8 h-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white" data-alt="EaseMyTask logo abstract geometric shape">
+<span class="material-symbols-outlined">task_alt</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-none">EaseMyTask</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Productivity Space</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg" href="#">
+<span class="material-symbols-outlined filled-icon">check_circle</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm font-medium">Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEEYob6yl0NyCtrZqR3aIyx6ct11ouAa8JtZOtW-VmpzZRgRXthH-0WZwh_pHRWhn_gOjkBi-ggy8kt7AQrF3R1epYzfQFZH5r4XUzi5dRCa5o_z1Ggt4Ek3w1qQj8EY9CIiMGrsjKr76JwL_GoVhTSdhIC4bDiRLeDkjwwc-r4celBh4vJPrfuLTF9GJ_CRPXa0K3P8K1HdgAJZ_2OPhkURpVFCSJq8JlCqxHYvfOcXBk4LVeY9qVrVqsiP5XXFrDfc5cr2eY1VGx')"></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-slate-900 dark:text-white leading-none">Alex Rivera</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pro Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden relative">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex items-center justify-between px-8 z-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">today</span>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Today View</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative max-w-xs w-64 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search tasks..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-8 scroll-smooth">
+<div class="max-w-4xl mx-auto">
+<div class="mb-10">
+<h3 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Today's Schedule</h3>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Monday, Oct 24 • 3 tasks remaining</p>
+</div>
+<!-- Timeline Layout -->
+<div class="relative">
+<!-- Vertical Timeline Line -->
+<div class="absolute left-20 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800"></div>
+<!-- 9:00 AM Slot -->
+<div class="flex gap-8 mb-12 relative group">
+<div class="w-12 text-right">
+<span class="text-sm font-bold text-slate-400">9 AM</span>
+</div>
+<div class="absolute left-20 top-2 w-3 h-3 rounded-full bg-orange-500 border-2 border-white dark:border-slate-900 -translate-x-1/2 z-10"></div>
+<div class="flex-1">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow group-hover:border-orange-500/30">
+<div class="flex items-start gap-4">
+<input class="mt-1 w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/30" type="checkbox"/>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold uppercase tracking-wider text-orange-500 bg-orange-50 dark:bg-orange-950/30 px-2 py-0.5 rounded">Medium Priority</span>
+<span class="text-xs text-slate-400 font-medium">9:00 - 9:45 AM</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white">Morning Standup</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Review team goals for the week and identify blockers.</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-400">link</span>
+<a class="text-xs text-primary font-semibold hover:underline" href="#">Meet Link: Zoom-XJ3</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 10:00 AM Slot (Empty) -->
+<div class="flex gap-8 mb-12 relative opacity-30">
+<div class="w-12 text-right">
+<span class="text-sm font-bold text-slate-400">10 AM</span>
+</div>
+<div class="absolute left-20 top-2 w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 -translate-x-1/2 z-10"></div>
+<div class="flex-1 border-t border-dashed border-slate-200 dark:border-slate-800 mt-3 ml-2"></div>
+</div>
+<!-- 11:00 AM Slot -->
+<div class="flex gap-8 mb-12 relative group">
+<div class="w-12 text-right">
+<span class="text-sm font-bold text-slate-400">11 AM</span>
+</div>
+<div class="absolute left-20 top-2 w-3 h-3 rounded-full bg-red-500 border-2 border-white dark:border-slate-900 -translate-x-1/2 z-10"></div>
+<div class="flex-1">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow group-hover:border-red-500/30">
+<div class="flex items-start gap-4">
+<input class="mt-1 w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/30" type="checkbox"/>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold uppercase tracking-wider text-red-500 bg-red-50 dark:bg-red-950/30 px-2 py-0.5 rounded">High Priority</span>
+<span class="text-xs text-slate-400 font-medium">11:00 - 1:00 PM</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white">Deep Work: Project Alpha</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Focus on the core API architectural changes and database migration script.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-slate-600 dark:text-slate-300">#Engineering</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-slate-600 dark:text-slate-300">#FocusMode</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 12:00 PM - 1:00 PM Slots (Empty/Luch) -->
+<div class="flex gap-8 mb-12 relative opacity-30">
+<div class="w-12 text-right">
+<span class="text-sm font-bold text-slate-400">12 PM</span>
+</div>
+<div class="absolute left-20 top-2 w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-700 -translate-x-1/2 z-10"></div>
+<div class="flex-1 border-t border-dashed border-slate-200 dark:border-slate-800 mt-3 ml-2"></div>
+</div>
+<!-- 2:00 PM Slot -->
+<div class="flex gap-8 mb-12 relative group">
+<div class="w-12 text-right">
+<span class="text-sm font-bold text-slate-400">2 PM</span>
+</div>
+<div class="absolute left-20 top-2 w-3 h-3 rounded-full bg-green-500 border-2 border-white dark:border-slate-900 -translate-x-1/2 z-10"></div>
+<div class="flex-1">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow group-hover:border-green-500/30">
+<div class="flex items-start gap-4">
+<input class="mt-1 w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/30" type="checkbox"/>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-bold uppercase tracking-wider text-green-500 bg-green-50 dark:bg-green-950/30 px-2 py-0.5 rounded">Low Priority</span>
+<span class="text-xs text-slate-400 font-medium">2:00 - 2:30 PM</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white">Client Call</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Brief update call with the marketing team regarding the new campaign launch.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="absolute bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-4 focus:ring-primary/20 z-20">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

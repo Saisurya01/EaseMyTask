@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Goals - EaseMyTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4848e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-tight">EaseMyTask</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Workspace</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">track_changes</span>
+<span class="text-sm font-medium">Goals</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<div class="pt-4 pb-2 px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Preferences</div>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUweJT4HtlJXpw25dwNARtAueg8aGC-sEu6Y7xCoS2D5smwCf5wHHgIPSvwECkaP17mNNBpJliHd67y53cl3XzMB6JpfYnGVe1tRpOfYoKEwVJE30MoOkhzfVL8S6vz7nPFVyhtXLFso2LECkteU0AEIXoMK4pfilFZKYKifvyuiAobHZr-inyN6wk9XSGwgp7WQVERib9UCQ2ePh7hG5QLyag3WpSK0h7cb5PneogJv-juYhHHsaAx80Hfg4nClMdWutaVSUsq3Ch')"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Pro Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="max-w-md w-full relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="Search goals, tasks..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-6 w-px bg-slate-200 dark:border-slate-700 mx-2"></div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Create Goal
+                </button>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-y-auto p-8">
+<div class="max-w-6xl mx-auto">
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Your Strategic Goals</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Track and manage your long-term objectives and vision.</p>
+</div>
+<!-- Goals Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Goal Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-lg hover:shadow-slate-200/50 transition-all group">
+<div class="h-40 bg-cover bg-center relative" data-alt="Vibrant UI design layout on screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoxRxqHmwK8cOMP-DlDkB-UdKhr7Rckr709HsvvImutj4lFa6S3tdGzkVhBhPwtu6M_lbKqLyOrzcLz774UIE0VLJXoSy4HlJNQ6xaARtw1GpycVMgvxGhZrAcRHQBljUqtWCYLK6VxyBIUOGGvklDTtSlmi7uCz45eZLx1xAyMZLgrwLbgrRL_HPPFpfawzlhGan9sG2RylzRIgKE6hB4j2mgN0b_I0Mt1f2CDlICsv7K36OhvMLs2rd_-o7aud9FKvhElbtUWIw_')">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">High Priority</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Master UI Design</h3>
+<button class="text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-6">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Dec 31, 2024</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-sm">assignment</span>
+<span>8 tasks linked</span>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Progress</span>
+<span class="text-sm font-bold text-primary">45%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Goal Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-lg hover:shadow-slate-200/50 transition-all group">
+<div class="h-40 bg-cover bg-center relative" data-alt="Web design portfolio showcase" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBA2qXxp7gaYz63SNi1kxtK19M9JkswqZLnN2DcdFxvaIHIeGJK1YekG5mZMTnbjHvIV4biwFMf7jn67Ot225t7dRZWZtTWpOL-emK-DkyYMC6dSBHLInzrGWUlwe2A33VH4p_Xa7dLUdu9MWLZh0dLHFBDZ10PH9xnRN9pdPPKTjIcWxExg0CkHXqD-db7y-spScfN7s3sQsZvUYdKUL9po_uxbRFalmzClJw0OX2OSFGba4X5Yi7epXT3OFraCfsiUTSyIyIEe9Ms')">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-emerald-500/90 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Active</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Launch Portfolio</h3>
+<button class="text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-6">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Nov 15, 2024</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-sm">assignment</span>
+<span>12 tasks linked</span>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Progress</span>
+<span class="text-sm font-bold text-primary">72%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Goal Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-lg hover:shadow-slate-200/50 transition-all group">
+<div class="h-40 bg-cover bg-center relative" data-alt="Stack of books on table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcfWCpChAzC8NCd-EtUMmJs7HWGsvw7EwlgY9GzOUE0QkzniJ7cYTi7O1aAJDl0nrgHE2bG3vei6DgzdV9TvBi--KGKRuV_IvAeUYh9ZJtNJtAJPzId23N3D074E1oLf4EU1ZU3WUGm_Yo2QJsuhem6AXwnexT384RLgBLeSyXM0E5ZG8zq4F8SUZ8e-8dIoBMlpTGzUibmnOVEwI6Fkn6s1OaDR0jO7yRhIIaH8YaemGRixWSMtav3sRYdWcPaRh3qUifD2mGkdAl')">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-amber-500/90 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Personal</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Read 12 Books</h3>
+<button class="text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-6">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Dec 20, 2024</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-sm">assignment</span>
+<span>5 tasks linked</span>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Progress</span>
+<span class="text-sm font-bold text-primary">25%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Goal Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col hover:shadow-lg hover:shadow-slate-200/50 transition-all group">
+<div class="h-40 bg-cover bg-center relative" data-alt="React code on editor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCmBSwcquWeUATT06175CsIkRPE3ipYvQYDDO7i6oUxdWO5RhuPpvHjYgQfnMORtKLL2gMk-ghz2v9QYG0NZss1X5Z2Hztb8rMGSOe0j5SPI_QexYM92QyafmTESqTH9qGUHtlkmw2MygatXsFW9zRNEO7bbbTMi3RvKQZ0so2_smSOBUUxYKCLO59X34-3evri1hXrrMMLoiKpaYczsyFWqGYWtPvIm0eBU41DD-OVUGmg-FECu16q5VVx4wHevBt7z-al26QmXr7')">
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Skill-Up</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Learn React</h3>
+<button class="text-slate-400 hover:text-slate-600"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-xs mb-6">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>Jan 10, 2025</span>
+<span class="mx-1">•</span>
+<span class="material-symbols-outlined text-sm">assignment</span>
+<span>15 tasks linked</span>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Progress</span>
+<span class="text-sm font-bold text-primary">10%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Create New Goal Card -->
+<button class="bg-white dark:bg-slate-900/50 rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center p-8 hover:border-primary/50 hover:bg-primary/5 transition-all group min-h-[360px]">
+<div class="size-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all mb-4">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</div>
+<p class="text-slate-900 dark:text-white font-bold text-lg">Create New Goal</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Define your next milestone</p>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

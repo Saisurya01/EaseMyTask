@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#4848e5",
+                "background-light": "#f6f6f8",
+                "background-dark": "#111121",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 border-r border-primary/10 bg-white dark:bg-slate-900 hidden md:flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">task_alt</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">EaseMyTask</h2>
+</div>
+<nav class="flex-1 px-4 space-y-1 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Team</span>
+</a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Preferences</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-primary/10">
+<div class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex-shrink-0 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up of a professional man's face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa2nd-SMlFPByoYWZ-pWWnzCnYjnxbtwfbNjJw6U8AGnd51XbOzU1A_hAR27tOfOxChscXK2KNvFvcD-533svgF5rJqzYxtBSkh6A7LUvYppU1v4uQEZAIye3Rr_1RMlh0vjmbayqhTeRAnlT3dZOUww52ZUctdJwPq-73wJzOKR8aNzJO20ey0TRfBB6I-Ju1llRUx6eCD5mINDAS2417NM_q9IWkv_pS-eWkYNnR_97-Sm8YJn2mbxCRCwKwPEmFLMDbVq-Dh9Yp"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate text-slate-900 dark:text-white">Alex Johnson</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Workspace Owner</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 bg-background-light">
+<!-- Header -->
+<header class="h-16 border-b border-primary/10 bg-white dark:bg-slate-900 flex items-center justify-between px-8">
+<div class="flex items-center flex-1">
+<div class="relative w-full max-w-md">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2 border-0 bg-slate-100 dark:bg-slate-800 rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="Search settings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<button class="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+<span>Workspace</span>
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</button>
+</div>
+</header>
+<!-- Settings Content -->
+<main class="flex-1 overflow-y-auto p-8">
+<div class="max-w-4xl mx-auto">
+<div class="mb-8">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">Settings</h1>
+<p class="text-slate-500 mt-2">Manage your account settings and personal preferences.</p>
+</div>
+<div class="space-y-6">
+<!-- Profile Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-primary/5">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Profile Information</h2>
+<p class="text-sm text-slate-500">Update your personal details and how others see you.</p>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-8 mb-8">
+<div class="relative">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-50 shadow-inner">
+<img alt="Avatar Preview" class="w-full h-full object-cover" data-alt="Portrait of a male professional smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6dJI4RD81AKeQC7th8av98om9ruz2P9xbGzBbx5OQfJngDqqtkfgsU2TlB57vhcFIkchiLh_UbJ3B8USaC10T8nMjew-sCSyikgCYunvZMy-8Sgw9wgu8O4sM-_fhH5kT2uhBQdVvw474jshnFi39XjfDNq1KntNsk61wMi_IGN7urC62Q-4pJZllaTOj4y7GBnMhSWUIkdsQWozydwsv1hzS7_WYqZLyGojX6jrRhJ8NbEvV-6DR6HJSaI5L2Owjxos8N4owBevZ"/>
+</div>
+<button class="absolute bottom-0 right-0 w-8 h-8 bg-primary text-white rounded-full border-2 border-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-slate-800 dark:text-white">Profile Photo</h3>
+<p class="text-xs text-slate-500 mt-1">JPG, GIF or PNG. Max size of 2MB.</p>
+<div class="flex gap-3 mt-4">
+<button class="px-4 py-2 text-sm font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">Upload New</button>
+<button class="px-4 py-2 text-sm font-semibold text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">Remove</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name</label>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border-0 rounded-lg focus:ring-2 focus:ring-primary" type="text" value="Alex Johnson"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border-0 rounded-lg focus:ring-2 focus:ring-primary" type="email" value="alex.johnson@example.com"/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Bio</label>
+<textarea class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border-0 rounded-lg focus:ring-2 focus:ring-primary" rows="3">Lead developer at TechFlow. Lover of efficient workflows.</textarea>
+</div>
+</div>
+<div class="mt-8 flex justify-end border-t border-primary/5 pt-6">
+<button class="px-6 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-md shadow-primary/20">Save Profile</button>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-primary/5">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Security &amp; Password</h2>
+<p class="text-sm text-slate-500">Keep your account secure with regular password updates.</p>
+</div>
+<div class="p-6 space-y-6">
+<div class="grid grid-cols-1 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Current Password</label>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border-0 rounded-lg focus:ring-2 focus:ring-primary" placeholder="••••••••" type="password"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">New Password</label>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border-0 rounded-lg focus:ring-2 focus:ring-primary" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Confirm New Password</label>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border-0 rounded-lg focus:ring-2 focus:ring-primary" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<p class="text-xs text-slate-500 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                                        Password must be at least 8 characters long and include numbers and special characters.
+                                    </p>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="px-6 py-2.5 bg-slate-900 dark:bg-white dark:text-slate-900 text-white font-bold rounded-lg hover:opacity-90 transition-all">Update Password</button>
+</div>
+</div>
+</section>
+<!-- Preferences Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-primary/5">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Theme Preference</h2>
+<p class="text-sm text-slate-500">Customize your interface experience.</p>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">dark_mode</span>
+</div>
+<div>
+<p class="font-semibold text-slate-800 dark:text-white">Dark Mode</p>
+<p class="text-xs text-slate-500">Switch between light and dark themes.</p>
+</div>
+</div>
+<button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out bg-slate-300 dark:bg-primary" role="switch">
+<span class="translate-x-0 dark:translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+<button class="p-4 rounded-xl border-2 border-primary bg-primary/5 flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-primary">light_mode</span>
+<span class="text-sm font-bold text-primary">Light Mode</span>
+</button>
+<button class="p-4 rounded-xl border-2 border-slate-100 hover:border-slate-200 flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">dark_mode</span>
+<span class="text-sm font-bold text-slate-500">Dark Mode</span>
+</button>
+<button class="p-4 rounded-xl border-2 border-slate-100 hover:border-slate-200 flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">devices</span>
+<span class="text-sm font-bold text-slate-500">System</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Account Management -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-red-100 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-red-50">
+<h2 class="text-lg font-bold text-red-600">Danger Zone</h2>
+<p class="text-sm text-slate-500">Permanent actions that cannot be undone.</p>
+</div>
+<div class="p-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex-1">
+<h3 class="font-semibold text-slate-800 dark:text-white">Deactivate Account</h3>
+<p class="text-sm text-slate-500 mt-1">This will temporarily disable your account and remove your profile from the search results.</p>
+</div>
+<button class="px-6 py-2.5 border-2 border-slate-200 text-slate-600 font-bold rounded-lg hover:bg-slate-50 transition-colors whitespace-nowrap">Deactivate</button>
+</div>
+<div class="h-[1px] bg-slate-100 dark:bg-slate-800 my-6"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex-1">
+<h3 class="font-semibold text-slate-800 dark:text-white">Delete Account</h3>
+<p class="text-sm text-slate-500 mt-1">Once you delete your account, there is no going back. Please be certain.</p>
+</div>
+<button class="px-6 py-2.5 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors shadow-lg shadow-red-200 whitespace-nowrap">Delete Permanently</button>
+</div>
+</div>
+</section>
+</div>
+<div class="mt-12 text-center text-sm text-slate-400 pb-8">
+<p>EaseMyTask v2.4.0 • <a class="underline" href="#">Terms of Service</a> • <a class="underline" href="#">Privacy Policy</a></p>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

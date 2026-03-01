@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EaseMyTask - My Routines</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#4848e5",
+                "background-light": "#f6f6f8",
+                "background-dark": "#111121",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="flex w-64 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark h-full">
+<div class="flex items-center gap-3 px-6 py-8">
+<div class="flex size-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">EaseMyTask</h2>
+</div>
+<nav class="flex-1 space-y-1 px-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="text-sm font-semibold">Routines</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">check_box</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex flex-1 flex-col overflow-hidden">
+<!-- Header -->
+<header class="flex h-16 items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full rounded-lg border-none bg-slate-100 dark:bg-slate-800 py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 dark:text-slate-100 placeholder:text-slate-400" placeholder="Search routines..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:border-slate-800"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Alex Rivers</p>
+<p class="text-xs text-slate-500">Pro Plan</p>
+</div>
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center border-2 border-primary" data-alt="User profile picture of a professional person" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyXvghRZaEs2ZyrKo8hTIUw9dDmaf-wM2Wioi0QT3N3l_6hpQgDD6L6c6bsLxuL4Iqw9yTABePPfOfMNoKimV3tXIX5vk14rLgzNtFF-IHqapiuCWkoYf0cgB8zNtjXe1rgGjbAky8sfcFmf6VwRLTMXy_YSObdQMeGqT8EBc3ErXUBch_q9TMoTAePEpMWpQPFClEB2Lv9xnBITQQmOuvnLVjHZ4f_1D0HiqK2sM_TXZVfPcgqb95jZNCaQfiYDOUOKUAPAkv2AvC');"></div>
+</div>
+</div>
+</header>
+<!-- Content -->
+<main class="flex-1 overflow-y-auto p-8">
+<div class="mx-auto max-w-6xl">
+<!-- Page Title & CTA -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Routines</h1>
+<p class="mt-1 text-slate-500 dark:text-slate-400 text-lg">Automate your recurring workflow and save time.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+                            Create Routine
+                        </button>
+</div>
+<!-- Days Filter -->
+<div class="flex flex-wrap items-center gap-2 mb-8 p-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl w-fit">
+<button class="px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-white shadow-sm">Mon</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Tue</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Wed</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-lg bg-primary text-white shadow-sm">Thu</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Fri</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Sat</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Sun</button>
+</div>
+<!-- Active Routine Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-12">
+<!-- Routine Card 1 -->
+<div class="xl:col-span-2 flex flex-col bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-start justify-between">
+<div class="flex gap-4">
+<div class="size-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">light_mode</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Morning Routine</h3>
+<p class="text-slate-500 text-sm">Starts daily at 7:30 AM • 4 tasks</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="p-6 space-y-4 flex-1">
+<div class="flex items-center gap-4 p-3 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="size-5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800"></div>
+<span class="flex-1 text-slate-700 dark:text-slate-300 font-medium">10-minute meditation</span>
+<span class="text-xs font-bold text-slate-400">07:35 AM</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="size-5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800"></div>
+<span class="flex-1 text-slate-700 dark:text-slate-300 font-medium">Review daily calendar &amp; goals</span>
+<span class="text-xs font-bold text-slate-400">07:45 AM</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="size-5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800"></div>
+<span class="flex-1 text-slate-700 dark:text-slate-300 font-medium">High-protein breakfast</span>
+<span class="text-xs font-bold text-slate-400">08:00 AM</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="size-5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800"></div>
+<span class="flex-1 text-slate-700 dark:text-slate-300 font-medium">Read 5 pages of current book</span>
+<span class="text-xs font-bold text-slate-400">08:20 AM</span>
+</div>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 flex items-center justify-center text-[10px] font-bold">M</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 flex items-center justify-center text-[10px] font-bold">T</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 flex items-center justify-center text-[10px] font-bold text-primary">W</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-primary text-white flex items-center justify-center text-[10px] font-bold">T</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 flex items-center justify-center text-[10px] font-bold">F</div>
+</div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold shadow-md shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                                    Generate Tasks
+                                </button>
+</div>
+</div>
+<!-- Secondary Sidebar Column -->
+<div class="space-y-6">
+<div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 p-6 rounded-2xl">
+<h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+                                    AI Suggestions
+                                </h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Based on your activity, we suggest adding a "Deep Work Focus" routine for Tuesday afternoons.</p>
+<button class="w-full py-2 bg-white dark:bg-slate-800 border border-primary/20 text-primary text-sm font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                    View Suggestion
+                                </button>
+</div>
+<!-- Weekly Review Template Card -->
+<div class="bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h4 class="font-bold text-slate-900 dark:text-white">Weekly Review</h4>
+</div>
+<p class="text-sm text-slate-500 mb-6">A comprehensive look at your achievements and planning for next week.</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-400">Fridays • 4:00 PM</span>
+<button class="text-primary text-sm font-bold hover:underline">Activate</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Templates Section -->
+<div class="mb-6 flex items-center justify-between">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Routine Templates</h2>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Browse All Templates
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Template 1 -->
+<div class="group bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:border-primary/50 transition-colors">
+<div class="size-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Morning Workout</h4>
+<p class="text-sm text-slate-500 mb-4">Boost your energy levels with a quick 30-min exercise circuit.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-50 dark:border-slate-800">
+<span class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold uppercase tracking-wider">Fitness</span>
+<button class="text-primary font-bold text-sm">Use Template</button>
+</div>
+</div>
+<!-- Template 2 -->
+<div class="group bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:border-primary/50 transition-colors">
+<div class="size-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">bedtime</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Evening Wind Down</h4>
+<p class="text-sm text-slate-500 mb-4">Prepare your mind for deep sleep with a consistent shut-down ritual.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-50 dark:border-slate-800">
+<span class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold uppercase tracking-wider">Health</span>
+<button class="text-primary font-bold text-sm">Use Template</button>
+</div>
+</div>
+<!-- Template 3 -->
+<div class="group bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:border-primary/50 transition-colors">
+<div class="size-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">terminal</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Deep Work Prep</h4>
+<p class="text-sm text-slate-500 mb-4">Eliminate distractions and set up your workspace for peak focus.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-50 dark:border-slate-800">
+<span class="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold uppercase tracking-wider">Productivity</span>
+<button class="text-primary font-bold text-sm">Use Template</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upcoming Tasks - EaseMyTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4848e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6f6f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">task_alt</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-tight">EaseMyTask</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Task Manager</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">calendar_month</span>
+<span class="text-sm font-bold">Upcoming</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="text-sm font-medium">Completed</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="text-sm font-medium">Categories</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-2">Storage Usage</p>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+<p class="text-[10px] text-slate-400 dark:text-slate-500 mt-2">7.5GB of 10GB used</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 flex items-center justify-between px-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">event_upcoming</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Upcoming Tasks</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search tasks..." type="text"/>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-800"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgcOTvuycWK_caYTIBw7KSinYnurlTfDjF081f6Gf3gG9Iv6dW97sIudAIB0YCHZPDX7apODD_xnocV6zi3zayTJLj4J4LRMip-TIqnt2YLYuewyiwYbaX8a_MSg293Xgp0fhqfsBczntos3cHxnMSKEFqR9gNakP-ud-Y_LjOIJIy9I_qAhluDyh3s3KEtBE4HQIt8tuZ3UWqe2SnHcSUn8bGeov8O9g5fQ4lFlraooGhdxUD-5Yn6fbGu9xxNqHxFCGo9wchYCLG"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="p-8 max-w-4xl mx-auto w-full">
+<!-- Date Group: Tomorrow -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        Tomorrow, Oct 24
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded-full">3 Tasks</span>
+</h3>
+</div>
+<div class="space-y-3">
+<!-- Task Item 1 -->
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all">
+<div class="flex-shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white">Project sync with design team</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Discussing the new UI kit updates</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-400">10:00 AM</span>
+<div class="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold rounded uppercase tracking-wider">Design</div>
+</div>
+</div>
+<!-- Task Item 2 -->
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all">
+<div class="flex-shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white">Review marketing assets</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Approve final social media banners</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-400">02:30 PM</span>
+<div class="px-2 py-1 bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 text-[10px] font-bold rounded uppercase tracking-wider">Marketing</div>
+</div>
+</div>
+<!-- Task Item 3 -->
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all">
+<div class="flex-shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white">Client Weekly Call</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Review milestones for Q4 release</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-400">04:00 PM</span>
+<div class="px-2 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 text-[10px] font-bold rounded uppercase tracking-wider">External</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Separator -->
+<div class="h-px w-full bg-slate-200 dark:bg-slate-800 my-8"></div>
+<!-- Date Group: Friday -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        Friday, Oct 25
+                        <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs rounded-full">2 Tasks</span>
+</h3>
+</div>
+<div class="space-y-3">
+<!-- Task Item 4 -->
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all">
+<div class="flex-shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white">Submit expense reports</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">All travel receipts from London trip</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-400">09:00 AM</span>
+<div class="px-2 py-1 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 text-[10px] font-bold rounded uppercase tracking-wider">Finance</div>
+</div>
+</div>
+<!-- Task Item 5 -->
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all">
+<div class="flex-shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white">System Maintenance</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Database backup and server optimization</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-400">11:00 PM</span>
+<div class="px-2 py-1 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-bold rounded uppercase tracking-wider">Ops</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Date Group: Weekend -->
+<section class="opacity-60">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        Next Week, Oct 28
+                        <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs rounded-full">1 Task</span>
+</h3>
+</div>
+<div class="space-y-3">
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all">
+<div class="flex-shrink-0">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white">Quarterly Planning</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Set goals and OKRs for the upcoming quarter</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-slate-400">09:00 AM</span>
+<div class="px-2 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded uppercase tracking-wider">Strategy</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

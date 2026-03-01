@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EaseMyTask Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4848e5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg size-10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">task_alt</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">EaseMyTask</h1>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">today</span>
+                    Today
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">upcoming</span>
+                    Upcoming
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                    Calendar
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">tour</span>
+                    Goals
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">autorenew</span>
+                    Routines
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mt-4" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+<button class="flex items-center justify-between w-full px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl">
+<span class="text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Appearance</span>
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400 text-xl">dark_mode</span>
+</button>
+<div class="flex items-center gap-3 p-2">
+<div class="size-10 rounded-full bg-primary/20 bg-cover bg-center" data-alt="User profile avatar portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDxpU7B7wcb3qMvLcdjmXur1dK-YyPigEeKu82IiGKfIvZOgDbMsuexQjeL-B6GTvub3RJO6qFowIb73iMEmbhz55WoSBcF-ZRUXUVTLEwZXwDMzDmReIBtE1a4J0ObB57HoQRDtRdlWzBJ7dZwOj295RoTp_xYodGD1H5Zh9eLq9fgpyF60RJadWNcBwuxcYkdrcEMbjYUemuGH_eCVVNSbkjUtlg2mtI9HNhVFBB29WUZUhP6yqD2xfPoTD1spiwTgU7WeuiHdcn')"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Morgan</p>
+<p class="text-xs text-slate-500 truncate">alex@easemytask.io</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-8">
+<h2 class="text-xl font-bold">Dashboard</h2>
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Search tasks, goals or routines..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-xl flex items-center gap-2 font-semibold text-sm transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">add</span>
+                        Add Task
+                    </button>
+</div>
+</header>
+<!-- Content Scroll Area -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Summary Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<span class="text-slate-500 text-sm font-medium">Total Tasks</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold">24</span>
+<span class="text-green-500 text-xs font-bold">+2 today</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<span class="text-slate-500 text-sm font-medium">Completed</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold">18</span>
+<span class="text-slate-400 text-xs font-medium">75% rate</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<span class="text-slate-500 text-sm font-medium">Pending</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold">6</span>
+<span class="text-amber-500 text-xs font-bold">4 high priority</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<span class="text-slate-500 text-sm font-medium">Goals in Progress</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold">3</span>
+<span class="text-primary text-xs font-bold">2 on track</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Progress Section -->
+<div class="lg:col-span-1 flex flex-col gap-8">
+<!-- Daily Completion -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center text-center">
+<h3 class="text-lg font-bold mb-6">Daily Completion</h3>
+<div class="relative size-40">
+<svg class="size-full" viewbox="0 0 36 36">
+<path class="text-slate-100 dark:text-slate-800 stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-bold">75%</span>
+<span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Done</span>
+</div>
+</div>
+<p class="mt-6 text-sm text-slate-600 dark:text-slate-400">Great job! You've finished 18 tasks today. Just 6 more to reach your goal.</p>
+</div>
+<!-- Goal Progress Section -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold">Goal Progress</h3>
+<button class="text-primary text-sm font-bold">View All</button>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium">Launch New Product</span>
+<span class="font-bold">60%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium">Fitness Goal</span>
+<span class="font-bold">40%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Tasks Preview -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-lg font-bold">Upcoming Tasks</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-800 rounded-lg font-medium">This Week</button>
+<button class="px-3 py-1 text-sm text-slate-500 font-medium">Next Week</button>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Task Item -->
+<div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:bg-primary/5 transition-all group">
+<div class="size-6 rounded-lg border-2 border-slate-300 dark:border-slate-700 flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Design Mobile Onboarding Flow</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-xs text-slate-500">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Today, 2:00 PM
+                                        </span>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Design</span>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuavL1__ZUk9p73VZi1_8sssMgq6ZnaIK1Pq9o6tHOF_szgnPaAMxx4JrR2L7OPC9pYOMt0A7oqVNYkYUbSRgngETXx7j0N4L3tOa5lYfgjSzI5CI42fH29WtIly9o1MrE4lLgj8k4PAw79_3u-g4iEwifSmEfbbmCrDyFoByLfXVhx2zAnI2qiaHN9Akg0UhJAc1aZe5niOW2pQ_G2B9i3e7U4J8qXNAFyqC-2W-UhJd9oYfUZkhKGzrDLtuvAAfYZhTl72g1vKkw')"></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAY9bVUaex1wAwzMgEZKobbHeAaZ-K0HuXH0FLaxqKgzpFj93P_XxNWUttWJKys2x0XiQv0ZX4AurnUVQRBpsbS9E4LtEuRyC_NZM1qrDhxYcskGqUglgBMqmBJ_nD_4GYpKZoGQtMC4zjN0WqCgE1VWCz0N3vzlQ-1wdc7lg-p0woAnFpYx1oLbjGN4N3nIa9h4PAzwjyNE4j_p23FjqzLi1nfL3RoifPLGhDCoAfqhncsYVegNTdSjborYk5EjUmMVBAQiYLDN7Ue')"></div>
+</div>
+</div>
+<!-- Task Item -->
+<div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:bg-primary/5 transition-all group">
+<div class="size-6 rounded-lg border-2 border-slate-300 dark:border-slate-700 flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Review Q3 Marketing Strategy</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-xs text-slate-500">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Tomorrow, 10:00 AM
+                                        </span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-600 text-[10px] font-bold uppercase tracking-wider">Marketing</span>
+</div>
+</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhzp0dmUVkmly5N-F--7tu7o9xjVmn4Mo1nc4HjO5_GuBPPUYgLN35BsL18EIm-Vn13WV0tY_XkhmAb0ZXX8eKNkszyPyMIazGRptwYY5ZgpZ_8UL7hKaZNQ95VEl3VffvfmeIS9L47O4SKvZcyyWyj5DOJ3w-_ubwTg-cfzmm6e_kuOtiWJhWknMfGru1D3n2MLsCmHwYJ1tMXNUfjWWn6jSnGjb5KYHxEI6laGqkXc27LyJzbvzpBmDMxBrJf8FCXh4KxbEX-qEC')"></div>
+</div>
+<!-- Task Item -->
+<div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:bg-primary/5 transition-all group">
+<div class="size-6 rounded-lg border-2 border-slate-300 dark:border-slate-700 flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">Weekly Performance Sync</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-xs text-slate-500">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Wed, Jun 24
+                                        </span>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase tracking-wider">Management</span>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZNiu8hyVcuqH2C8lh6I65pOjEkUQBu2sGsSIJrXyJnzOtTgcxiy9pW_K9l3E1BHLBxC-P-x9T6v1_kyffnUwGxDtyAluz85cg3V1Mp3iQ26L7tu2kTcIgUBC_w501YDA10qlpx9scqMEohsUOKyPH-fvzlmvz6mkEjPwFwezyD_rp5JOkghlCt9S8x47X5hbHoGl7aLGv1FEOYxwzJzcOrSVOYEKSeTbtYa7u_twE8fyzLgOIAfSxDnzg6n1b-C53xuQjIs09SHgL')"></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARe-pcnCmDSCuKvufci9sELg0dt9C4HITcZl6G6cpxecn5yfGKoZ28P361D_-_7vRdgv5qn9thx-LW-UWkIFgKQszgQ-pAAkV53JD0vibAEXK8DQAVT839Vus9mfjnNTGdAV2klmX4TUzPY6BKPn0kibRzG1Ah5cBjiwjprlYAOAhzYpqZFSDMsfp0-ln-ohH_ki1sPedOutygEFvbayThkV0_x40Q8-_VXFJJbMKuTLKfbK_9GNZIlqUNTRZY2MoM3s2tw8PN27hx')"></div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBh4Dm0Q0EXroTRmGNUFy4YmxJQRBeg-FINXkr7UoFDBNXzC9xZfZeLJ3gn5G5IUeVUFVZRABglmnJULgi3zBb4NX73mtLScWgaWp38SaNuKaxQ65zKKFSsr2lYc2FiPZ1p-97c1YThL5-LSxXMh10LsenxdeJAzYqt7Aaav3QEGojOGwdWTLcb28fYHvQOiRAD8Ajxx0c6Y7gxAuUheHyl2YxJ7Sv6VpHzDJ8KkfS0CccAxzz0FjacDu2prq9L521iYfWIeGLbUkfq')"></div>
+</div>
+</div>
+<!-- Task Item -->
+<div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:bg-primary/5 transition-all group">
+<div class="size-6 rounded-lg border-2 border-slate-300 dark:border-slate-700 flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary scale-0 group-hover:scale-100 transition-transform text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-slate-900 dark:text-white">API Integration for Payment Gateway</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="flex items-center gap-1 text-xs text-slate-500">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Thu, Jun 25
+                                        </span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-600 text-[10px] font-bold uppercase tracking-wider">Engineering</span>
+</div>
+</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 overflow-hidden" data-alt="Team member profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBwkfV7XV3RmVgWNVegtTyyYtUGjfvj0YaTFW6R6xSaVlAW5c6eNBFVFhoEG8_VaJ_uJph7Ug2I4qJagtBVc6FNuIJJ5JEr9GAOstDH0oIyXC1AaUHeIY6GA7fqB0udPbHhvbPJlDX_mYshVCBNSx1xaj8kh3DW_OdDEJIlSYA5tmbgLd1fc1VW1Ig40BTWtK8-O49OaKpFEocyV3APX8KMNNNr6FF1jCDYKeuvC9zq7Q9SoO92ryGK0RFXRlwqaXZcVBJ82myVMRc')"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
